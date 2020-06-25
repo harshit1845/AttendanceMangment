@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bbt"
+    tools:context=".REG">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registertion"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#9BEE00EE"
+        android:textStyle="normal"
+        android:textSize="40sp" />
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:src="@drawable/school"
+        android:layout_marginHorizontal="120dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#BBEE0083"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#BBEE0083"
+        android:id="@+id/edt_username"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email id"
+        android:textSize="20dp"
+        android:textColor="#BBEE0083"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#BBEE0083"
+        android:id="@+id/edt_email"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#BBEE0083"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#BBEE0083"
+        android:id="@+id/edt_password"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmpassword"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#BBEE0083"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#BBEE0083"
+        android:id="@+id/edt_confirmpassword"/>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:text="SUBMIT"
+        android:id="@+id/btn_sub"
+        android:backgroundTint="#9BEE00EE"
+        android:textSize="10dp" />
+
+
+
+</LinearLayout>
