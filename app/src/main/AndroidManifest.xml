@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.abc">
+    package="com.example.abc" >
 
     <application
         android:allowBackup="true"
@@ -8,8 +8,15 @@
         android:label="Attendance Managment"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".STUDENT2"></activity>
+        android:theme="@style/AppTheme" >
+        <activity android:name=".techer_attendance_sheet" >
+        </activity>
+        <activity android:name=".take_attendance" />
+        <activity android:name=".student_attendance_sheet" />
+        <activity android:name=".AT_RECORD" />
+        <activity android:name=".ADDST" />
+        <activity android:name=".ADDTE" />
+        <activity android:name=".STUDENT2" />
         <activity android:name=".STUDENT" />
         <activity android:name=".TEACHER2" />
         <activity android:name=".TEACHER" />
@@ -17,7 +24,7 @@
         <activity android:name=".ADMIN" />
         <activity android:name=".SIR" />
         <activity android:name=".FIRST" />
-        <activity android:name=".LOGIN">
+        <activity android:name=".LOGIN" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
