@@ -6,13 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".TEACHER2">
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true">
-
-        <LinearLayout
+<LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="vertical">
@@ -58,6 +52,12 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="215dp"
                     android:layout_marginRight="10dp">
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/spinner"
+                        android:entries="@array/classes"
+                        android:id="@+id/spinner2"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -101,6 +101,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/btaddst"
+                                    android:onClick="takeAttendanceButton"
                                     android:background="@android:color/transparent"/>
 
 
@@ -151,6 +152,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/btatrecord"
+                                    android:onClick="previous_records"
                                     android:background="@android:color/transparent"/>
 
 
@@ -200,6 +202,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/btlogout"
+                                    android:onClick="logoutTeacher"
                                     android:background="@android:color/transparent"/>
 
 
@@ -215,7 +218,7 @@
             </RelativeLayout>
 
         </LinearLayout>
-    </ScrollView>
+
 
 
 
