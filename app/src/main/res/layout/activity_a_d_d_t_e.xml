@@ -92,6 +92,7 @@
                 android:layout_marginTop="8dp"
               android:background="@drawable/button1"
                 android:text="Add"
+                android:onClick="addTeacher"
                 android:textAllCaps="false" />
 
             <Button
@@ -107,6 +108,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/button1"
                 android:text="Remove"
+                android:onClick="removeTeacher"
                 android:textAllCaps="false"
                 />
 

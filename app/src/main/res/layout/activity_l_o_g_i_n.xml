@@ -27,7 +27,7 @@
             android:id="@+id/rellay1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+
             android:layout_below="@+id/imageView_logo">
 
             <TextView
@@ -52,6 +52,13 @@
                     android:layout_width="match_parent"
                     android:orientation="vertical"
                     android:layout_height="wrap_content">
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:id="@+id/spinner"
+                        android:background="@drawable/spinner"
+                        android:ColorHint="#857E7E"
+                        android:Color="#2B2727"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -63,6 +70,7 @@
                         android:textColor="@color/White"/>
 
                     <EditText
+                        android:id="@+id/edittext1"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
@@ -90,6 +98,7 @@
                         android:textColor="@color/White"/>
 
                     <EditText
+                        android:id="@+id/edittext2"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
@@ -105,7 +114,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/bt_log"
+                android:id="@+id/loginButton"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_below="@+id/linley"
@@ -115,6 +124,7 @@
                 android:background="@drawable/bt_bg"
                 android:textColor="@color/White"
                 android:textSize="16sp"
+                android:onClick="onButtonclick"
                 android:fontFamily="sans-serif-medium"
                 android:paddingRight="70dp"
                 android:paddingLeft="70dp"

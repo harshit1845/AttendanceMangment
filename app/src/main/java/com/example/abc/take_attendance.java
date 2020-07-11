@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -18,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -48,11 +52,11 @@ public class take_attendance extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_attendance);
 
-        period = findViewById(R.id.sp3);
+        period = findViewById(R.id.spinner4);
 
         selectedItem = new ArrayList<String>();
 
-        TextView classname = findViewById(R.id.tv2);
+        TextView classname = findViewById(R.id.textview);
         classname.setText("CSE");
         Bundle bundle1 = getIntent().getExtras();
         class_selected = bundle1.getString("class_selected");
@@ -90,48 +94,51 @@ public class take_attendance extends AppCompatActivity {
 
     public void  OnStart(ArrayList<String> userlist) {
         nonselectedItem = userlist;
-        ListView chl = findViewById(R.id.checkable_list);
+        ListView chl = findViewById(R.id.checkblelist);
         chl.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
         ArrayAdapter<String> aa = new ArrayAdapter<>(this,R.layout.checkable_list_layout,R.id.txt_title,userlist);
         chl.setAdapter(aa);
-        chl.setOnItemClickListener((parent, view,position,id) {
-            String selectedItem = ((TextView) view).getText().toString();
-            if (selectedItem.contains(selectedItem))
-                selectedItem.remove(selectedItem);
-            else
-                selectedItem.add(selectedItem);
+        chl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = ((TextView) view).getText().toString();
 
+            }
         });
+
     }
-    public void showSelectedItem(View view) {
-        String setItems = "";
-        periodno = period.getSelectedItem().toString();
-        if (periodno.equals("select period")) {
-            Toast.makeText(this,"select a class",Toast.LENGTH_LONG).show();
 
-        }
-        else {
-            ref = FirebaseDatabase.getInstance().getReference();
+    public void showSelectedItem(View view){
+            String setItem = "";
+            periodno = period.getSelectedItem().toString();
+            if (periodno.equals("select period")) {
+                Toast.makeText(this,"select a class",Toast.LENGTH_LONG).show();
 
-            dbAttendance = ref.child("attendance").child(date);
+            }else {
+                ref = FirebaseDatabase.getInstance().getReference();
 
-            for (String item : selectedItem) {
-                Toast.makeText(this,"Attendance create Successfully",Toast.LENGTH_SHORT).show();
-                nonselectedItem.remove(item);
-                dbAttendance.child(item).child(periodno).setValue("P" + "/" + teacher_id);
-                if (setItems == "")
-                    setItems = item;
+                dbAttendance = ref.child("attendance").child(date);
+                for (String item : selectedItem) {
+                    Toast.makeText(this,"Attendance created succfully",Toast.LENGTH_SHORT).show();
+                    nonselectedItem.remove(item);
+                    dbAttendance.child(item).child(periodno).setValue("p" + "/" + teacher_id);
+                    if (setItem == "")
+                        setItem = item;
                     else
-                     setItems += "/" + item;
+                        setItem += "/" + item ;
+                }
 
+
+                for (String item : nonselectedItem) {
+                    Toast.makeText(this, "Attendance create successfully", Toast.LENGTH_SHORT).show();
+                   dbAttendance.child(item).child(periodno).setValue("A" + "/" +teacher_id);
+                }
             }
-
-            for (String item : nonselectedItem) {
-                Toast.makeText(this,"Attendance create Successfully",Toast.LENGTH_SHORT).show();
-                dbAttendance.child(item).child(periodno)
-            }
-
-        }
     }
+
+
+
+
+
 }

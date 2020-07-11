@@ -48,13 +48,7 @@ public class TEACHER2 extends AppCompatActivity {
 
 
     }
-    @Override
-    public void onItemSelected(AdapterView<?>parent, View view, int position, long id) {
-        item = parent.getItemAtPosition(position).toString();
-    }
-    public void onNothingSelected(AdapterView<?>arg0){
 
-    }
     public void takeAttendanceButton(View v) {
         Bundle basket = new Bundle();
         basket.putString("class_selected",item);

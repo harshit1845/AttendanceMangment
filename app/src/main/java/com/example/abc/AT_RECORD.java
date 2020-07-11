@@ -95,7 +95,7 @@ public class AT_RECORD extends AppCompatActivity {
         });
     }
     public void list(ArrayList Studentlist) {
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,);
+        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,Studentlist);
         listView.setAdapter(adapter);
     }
 

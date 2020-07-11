@@ -3,9 +3,11 @@ package com.example.abc;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.google.firebase.database.DatabaseReference;
@@ -17,7 +19,7 @@ public class ADDTE extends AppCompatActivity {
     String tname,tid,classname,tpass;
     Spinner classes;
     DatabaseReference databaseTeacher;
-    Toolbar mToolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,36 @@ public class ADDTE extends AppCompatActivity {
 
 
     }
-    public void ADDTEACHER(View v){
+    public void addTeacher(View v){
+        tname = Tname.getText().toString();
+        tid = Tid.getText().toString();
+        classname = classes.getSelectedItem().toString();
+        tpass = tpassword.getText().toString();
 
+
+        if(!(TextUtils.isEmpty(Tid.getText().toString()))){
+            TE te = new TE(tname,tid,classname,tpass);
+            databaseTeacher.child(tid).setValue(te);
+            Toast.makeText(getApplicationContext(),"Teacher added successfully", Toast.LENGTH_LONG).show();
+            finish();
+
+        }else {
+            Toast.makeText(getApplicationContext(),"fields cannot be empty",Toast.LENGTH_LONG).show();
+
+        }
+
+    }
+    public void removeTeacher(View v) {
+        if (!TextUtils.isEmpty(Tid.getText().toString())) {
+            tid = Tid.getText().toString();
+            databaseTeacher.child(tid).setValue(null);
+            Toast.makeText(getApplicationContext(), "student remove successfully", Toast.LENGTH_LONG).show();
+
+        } else {
+            Toast.makeText(getApplicationContext(), "id can not be empty", Toast.LENGTH_LONG).show();
+
+
+        }
     }
 
 }
