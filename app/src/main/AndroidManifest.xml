@@ -19,20 +19,24 @@
         <activity android:name=".ADDST" />
         <activity android:name=".ADDTE" />
         <activity android:name=".STUDENT2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".STUDENT" />
         <activity android:name=".TEACHER2" />
         <activity android:name=".TEACHER" />
-        <activity android:name=".ADMIN2" />
+        <activity android:name=".ADMIN2" >
+
+        </activity>
         <activity android:name=".ADMIN" />
         <activity android:name=".SIR" />
         <activity android:name=".FIRST" />
         <activity android:name=".LOGIN" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
 
         </activity>
         <activity android:name=".MainActivity" >

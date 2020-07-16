@@ -1,10 +1,12 @@
 package com.example.abc;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresPermission;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,9 +24,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.channels.WritableByteChannel;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
 
 public class take_attendance extends AppCompatActivity {
     String teacher_id;
@@ -104,6 +108,7 @@ public class take_attendance extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = ((TextView) view).getText().toString();
 
+
             }
         });
 
@@ -136,9 +141,6 @@ public class take_attendance extends AppCompatActivity {
                 }
             }
     }
-
-
-
 
 
 }

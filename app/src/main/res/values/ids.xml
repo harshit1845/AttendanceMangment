@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="date" type="id">date</item>
-    <item name="data" type="id">data</item>
-    <item name="dat" type="id">DAT</item>
-    <item name="Data" type="id">date</item>
-    <item name="Date" type="id">date</item>
-</resources>

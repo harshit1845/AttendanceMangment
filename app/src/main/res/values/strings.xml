@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">ABC</string>
+    <array name="Selcte">
+        <item>Admin</item>
+        <item>Teacher</item>
+        <item>Student</item>
+    </array>
     <array name="classes">
         <item>select classes</item>
         <item>CSE</item>

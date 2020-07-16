@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class TEACHER2 extends AppCompatActivity {
+public class TEACHER2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     String item;
     String message;
 
@@ -47,6 +47,12 @@ public class TEACHER2 extends AppCompatActivity {
         spinner2.setAdapter(dataAdapter);
 
 
+    }
+    @Override
+    public void onItemSelected(AdapterView<?>parent, View view,
+                               int position, long id) {
+    }
+    public void onNothingSelected(AdapterView<?> arg0) {
     }
 
     public void takeAttendanceButton(View v) {

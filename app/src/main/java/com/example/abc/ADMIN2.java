@@ -29,7 +29,7 @@ public class ADMIN2 extends AppCompatActivity {
     DatabaseReference dbStudent;
     DatabaseReference dbadmin;
     DatabaseReference dbAttendance;
-    private static long back_pressed;
+
 
     ArrayList Studentlist = new ArrayList();
 
